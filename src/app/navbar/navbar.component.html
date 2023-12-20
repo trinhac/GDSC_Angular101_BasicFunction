@@ -1,0 +1,11 @@
+<div class="navbar">
+    <ul>
+        @if (isLogin == false){
+            <li><a (click)="handleLogin()">Login</a></li>
+        }
+        @else {
+            <li><a (click)="handleLogout()">Logout</a></li>
+            <img src="https://groomersgallery.com/wp-content/uploads/2014/06/First-Aid-Corner-wasp-stings02.jpg" alt="" class="profile-pic">
+        }
+    </ul>
+</div>

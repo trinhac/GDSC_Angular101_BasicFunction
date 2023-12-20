@@ -1,0 +1,14 @@
+.product-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    // background-color: #ffffff;
+    padding: 10px;
+}
+
+.navbar-section {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
