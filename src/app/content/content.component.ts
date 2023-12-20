@@ -1,6 +1,6 @@
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from 'stream';
-
+import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-content',
   standalone: true,
@@ -9,24 +9,28 @@ import { EventEmitter } from 'stream';
   styleUrl: './content.component.scss'
 })
 export class ContentComponent {
-  @Input ({
+  @Input({
     transform: (value: any) => {
-      return{
+      return {
         ...value,
         total: value.price * value.quantity,
       }
     },
     // alias: 
   }) product: any
+  constructor(private productService: ProductService) { }
 
+  products: any;
+
+  ngOnInit() {
+    this.products = this.productService.getProducts();
+  }
+
+  removeProduct(id: number) {
+    this.productService.removeProduct(id);
+    this.products = this.productService.getProducts();
+  }
   // @Output() onAddOnce = new EventEmitter();
   // @Output() onAddAll = new EventEmitter();
 
-  // buyOnce(){
-  //   this.onAddOnce.emit(this.product);
-  // }
-
-  // buyAll() {
-  //   this.onAddAll.emit(this.product);
-  // }
 }

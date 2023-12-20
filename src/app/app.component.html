@@ -1,19 +1,19 @@
-<div class="navbar-section">
-  <app-navbar></app-navbar>
-</div>
+<div class="container">
 
-<div class="category-section">
-  @for(item of ['Food', 'Beverage', 'Dessert']; track $index){
-  <span>
-    <ng-container [ngTemplateOutlet]="numberOfCategory" [ngTemplateOutletContext]='{name:item}'></ng-container>
-  </span>
-  }
-</div>
+  <div class="navbar-section">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="main">
+    <div class="category-section">
+      @for(item of ['Food', 'Beverage', 'Dessert']; track $index){
+      <span>
+        <ng-container [ngTemplateOutlet]="numberOfCategory" [ngTemplateOutletContext]='{name:item}'></ng-container>
+      </span>
+      }
+    </div>
 
-<div class="product-container">
-  @for (product of products; track $index){
-  <app-content [product]="product"></app-content>
-  }
+      <app-content></app-content>
+
 </div>
 
 <ng-template #numberOfCategory let-name="name">

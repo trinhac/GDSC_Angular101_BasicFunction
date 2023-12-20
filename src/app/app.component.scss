@@ -1,9 +1,9 @@
-.product-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    // background-color: #ffffff;
-    padding: 10px;
-}
+// .product-container {
+//     display: grid;
+//     grid-template-columns: auto auto auto auto;
+//     // background-color: #ffffff;
+//     padding: 10px;
+// }
 
 .navbar-section {
     overflow: hidden;
@@ -12,3 +12,10 @@
     top: 0;
     width: 100%;
 }
+
+.category-section {
+    // position: absolute;
+    margin: 4rem 0 0 0;
+    padding: 1rem;
+}
+
